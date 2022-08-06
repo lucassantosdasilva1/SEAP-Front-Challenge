@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgound: #f7f7f7;
+  --white: #FFFFFF;
+  --black: #000000;
+  
+  
+  --blue-100: #3f51b5;
+  --blue-500: #283593;
+  --gray-900: #121214;
+
+  --cyan-500: #61dafb;
+  --yellow-500: #eba417;
+}
+
+body {
+  background-color: var(--backgound);
+  color: var(--black)
+}
+
+body, input, textarea, select, button {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
