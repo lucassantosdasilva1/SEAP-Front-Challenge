@@ -41,8 +41,8 @@ Projeto desenvolvido durante a avaliação para o teste de Desenvolvedor Front-e
   - [x] Listar
   - [x] Pesquisar
   - [x] Editar
-  - [] Criar :/ nao deu tempo ultimo commit as 3:30 da madruga
-  - [] Apagar :/ nao deu tempo ultimo commit as 3:30 da madruga
+  - [ ] Criar :/ nao deu tempo ultimo commit as 3:30 da madruga
+  - [ ] Apagar :/ nao deu tempo ultimo commit as 3:30 da madruga
 
 </br>
 
