@@ -64,7 +64,7 @@ export default function AdicionarDetento() {
 
   const handlePost = async () => {   
     const value: detentosDTO = {
-      id: detentos.length + 1,
+      id: detentos.length + 2,
       nome: detentoState.nome,
       unidade: {
         id: Math.floor(Math.random() * 7),
