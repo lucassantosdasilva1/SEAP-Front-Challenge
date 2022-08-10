@@ -1,24 +1,21 @@
-import {
-  ContainerFilled,
-  DeleteColumnOutlined,
-  DeleteFilled,
-  EditFilled,
-  EditOutlined,
-  PlusCircleFilled,
-  PlusOutlined,
-  PlusSquareFilled,
-} from "@ant-design/icons";
+import { useEffect, useState } from "react";
+
 import { Anchor, Button, Layout, PageHeader, Space } from "antd";
-import ButtonGroup from "antd/lib/button/button-group";
 import { Content, Footer, Header } from "antd/lib/layout/layout";
 import Table, { ColumnsType } from "antd/lib/table";
+
 import Link from "next/link";
-import { useEffect, useState } from "react";
+
 import ActionTable from "../../components/ActionsTable/ActionsTable";
 import TableHeader from "../../components/TableHeader/TableHeader";
-import { EditAtendimentoDataType } from "../../context/DetentosContext";
+
+import { EditAtendimentoDataType, useDetento } from "../../context/DetentosContext";
+
 import { atendimentosDTO } from "../../DTO/AtendimentosDTO";
 import api from "../../service/api";
+
+import { Input } from "antd";
+const { Search } = Input;
 
 import styles from "./atendimentos.module.scss";
 
@@ -29,27 +26,9 @@ interface DataType {
 }
 
 export default function Atendimentos() {
-  const [atendimentos, setAtendimentos] = useState<DataType[]>([]);
   const [loading, setLoading] = useState(true);
 
-
-  const dataSource = [
-    {
-      id: "1",
-      tipoAtendimento: "Educação",
-      atendimento: "Filipe Gomes",
-    },
-    {
-      id: "2",
-      tipoAtendimento: "Educação",
-      atendimento: "Filipe Gomes",
-    },
-    {
-      id: "3",
-      tipoAtendimento: "Educação",
-      atendimento: "Filipe Gomes",
-    },
-  ];
+  const { getAtendimentos, atendimentos, setAtendimentos, datasourceAtend } = useDetento();
 
   const columns = [
     {
@@ -75,26 +54,27 @@ export default function Atendimentos() {
     },
   ];
 
-  useEffect(() => {
-    async function fetchAtendimentos() {
-      try {
-        const response = await api.get("/atendimentos");
-        const data : atendimentosDTO[] = response.data
-        const ListaAtendimentos : DataType[] = data.map(atendimento => ({
-          id: atendimento.id,
-          detento: atendimento.detento.nome,
-          tipoAtendimento: atendimento.tipoAtendimento.descricao
-          })
-        )
-        setAtendimentos(ListaAtendimentos)
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-   }
+  async function fetchAtendimentos() {
+    setLoading(true);
+    try {
+      const { data } = await getAtendimentos();
+      setAtendimentos(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-    fetchAtendimentos();
+
+    //=========pesquisa============
+    const [textoPesquisa, setTextoPesquisa] = useState("");
+
+    const filteredData = datasourceAtend.filter((item) => item.detento.toLocaleLowerCase().includes(textoPesquisa));
+    //=========pesquisa============
+  
+  useEffect(() => {
+    fetchAtendimentos()
   }, []);
 
   return (
@@ -102,10 +82,26 @@ export default function Atendimentos() {
       <Layout>
         <Content>
           <Table
-            dataSource={atendimentos}
+            dataSource={datasourceAtend}
             columns={columns}
-            title={() => <TableHeader title="Atendimentos" buttonTitle="Novo Atendimento" href="/atendimentos/novoAtendimento" />}
-            size="small"
+            title={() => (
+              <>
+                <TableHeader 
+                  title="Atendimentos" 
+                  buttonTitle="Novo Atendimento" 
+                  href="/atendimentos/novoAtendimento" 
+                />
+                <Search
+                  size="large"
+                  // ref={(ele) => (textoPesquisa = ele)}
+                  // suffix={sufixo}
+                  onChange={(e) => setTextoPesquisa(e.target.value)}
+                  placeholder="Digite o nome do detento"
+                  value={textoPesquisa}
+                />
+              </>
+              )}
+              size="small"
           />
         </Content>
       </Layout>

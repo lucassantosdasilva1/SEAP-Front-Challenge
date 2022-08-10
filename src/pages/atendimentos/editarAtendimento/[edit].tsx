@@ -198,9 +198,9 @@ export const getServerSideProps: GetServerSideProps = async ({
   req,
   params,
 }) => {
-  const { id } = params;
+  const { edit } = params;
 
-  const response = await api.get(`/atendimentos/${id}`);
+  const response = await api.get(`/atendimentos/${edit}`);
   const atendimento: atendimentosDTO = response.data;
   // setDetentos(ListaDetentos)
 

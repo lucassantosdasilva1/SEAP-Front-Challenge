@@ -19,7 +19,6 @@ const { Search } = Input;
 
 export default function Detentos() {
   const [loading, setLoading] = useState<boolean>();
-  const [atualizar, setAtualizar] = useState(0);
 
   const { getDetentos, detentos, setDetentos, datasource } = useDetento();
 
@@ -69,12 +68,6 @@ export default function Detentos() {
     } finally {
       setLoading(false);
     }
-  }
-
-  function reload() {
-    const x = 1;
-    const y = x + 1;
-    setAtualizar(y);
   }
 
   //=========pesquisa============
