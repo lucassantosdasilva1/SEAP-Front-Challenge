@@ -1,34 +1,129 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+</p>
+<h1 align="center">
+	Desafio SEAP
+</h1>
 
-## Getting Started
+<h4 align="center"> 
+	🚧  Front-end (React c/ NextJS) ♻️ Concluído 🚀 🚧
+</h4>
 
-First, run the development server:
+<p align="center">
+ <a href="#-sobre-o-projeto">Sobre</a> •
+ <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-como-executar-o-projeto">Como executar</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#-autor">Autor</a> • 
+ <a href="#user-content--licença">Licença</a>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
+
+## 💻 Sobre o projeto
+
+♻️ A aplicação Web tras uma forma fácil de gerenciar os presos e atendimentos de pessoas privadas de liberdade.
+
+
+Projeto desenvolvido durante a avaliação para o teste de Desenvolvedor Front-end para **SEAP**.
+
+---
+
+## ⚙️ Funcionalidades
+
+- Detento
+  - [x] Listar
+  - [x] Criar
+  - [x] Editar
+  - [x] Apagar
+  - [x] Pesquisar
+
+</br>
+
+- Atendimento
+  - [x] Listar
+  - [x] Criar
+  - [x] Editar
+  - [x] Apagar
+  - [x] Pesquisar
+
+</br>
+
+## 🚀 Como executar o projeto
+
+Este projeto é divido em duas partes:
+1. [Backend](Json Server) 
+2. [FRONTEND](https://github.com/lucassantosdasilva1/SEAP-Front-Challenge) ([link](https://github.com/lucassantosdasilva1/SEAP-Front-Challenge) do github)
+
+💡O Front precisa que o Backend esteja sendo executado para funcionar (No nosso caso localhost).
+
+### 🎲 Iniciando o projeto - Json Server
+
+
+Primeiro, você precisa ter o <kbd>[NodeJS](https://nodejs.org/en/download/)</kbd> instalado na sua máquina. 
+
+Após ter o **Node** instalado, instale as dependências
+
+ACESSE O DIRETORIO onde você baixou e decompactou o zip/clone sysconsultbackendOK e faça:
+
+```sh
+# Instale as dependencias:
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Tudo certo! agora rode o comando
+```
+$ npm run server
+```
+#### Ou rode com yarn
+```
+$ yarn server
+```
+### Bom eu já deixei este script pronto para você. Configurado para a porta 3333. Para não termos conflitos com o NextJS
+</br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Se tudo correu bem, agora você estará com seu backend funcionando perfeitamente!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend rodando, agora rode o comando: 
+```
+$ yarn dev
+```
+## E... Voalá! 
+# 
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+ <h1 align="center">
+ !!!!!!!!Calma. ATENÇÃO !!!!!!!
+ </h1>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Por questões de segurança eu deixei a rota de inicio em <strong>localhost:3000/detentos</strong>
+</br>
 
-## Deploy on Vercel
+### Por favor ao acessar pelo navegador digite:<h2>localhost:3000/detentos</h2> 
+### para que funcione corretamente. Obrigado!
+</br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Tecnologias
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+As seguintes ferramentas foram usadas na construção do projeto:
+
+  - **NextJS**
+  - **Ant Design**
+  - **React**
+-   **[Axios](https://github.com/axios/axios)**
+  - **Typescript**
+
+> Veja o arquivo  [package.json](https://)
+
+---
+
+---
+
+## 📝 Licença
+
+Este projeto esta sobe a licença [MIT](./LICENSE).
+
+Feito com ❤️ por Lucas Santos 👋🏽 [Entre em contato!](https://www.linkedin.com/in/lucas-santos-758084112)
+
+---

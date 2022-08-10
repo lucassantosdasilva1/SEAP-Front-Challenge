@@ -1,0 +1,37 @@
+.button {
+  width: 20rem;
+  height: 10rem;
+  border: 0;
+  border-radius: 50px;
+
+
+  background-color: var(--blue-500);
+}
+
+.button:hover {
+  transition: all 0.2s  ease-in;
+  background-color: var(--blue-500-hover);
+}
+
+.myButton {
+	background:linear-gradient(to bottom, #637aad 5%, #5972a7 100%);
+	background-color:#637aad;
+	border-radius:15px;
+	border:1px solid #314179;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:26px;
+	font-weight:bold;
+	padding:29px 71px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #5972a7 5%, #637aad 100%);
+	background-color:#5972a7;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

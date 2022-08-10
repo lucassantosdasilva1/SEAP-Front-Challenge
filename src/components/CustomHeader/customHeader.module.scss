@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  height: inherit;
+}
+
+.title {
+  display: flex;
+  height: inherit;
+  width: 15vw;
+
+  // align-items: center;
+}

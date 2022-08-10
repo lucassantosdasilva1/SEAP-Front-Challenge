@@ -1,0 +1,159 @@
+{
+  "detentos": [
+    {
+      "id": 1,
+      "nome": "Samuel Jackson1",
+      "unidade": {
+        "id": 1,
+        "descricao": "Unidade Prisional Sao Luis 1"
+      },
+      "nomeMae": "Mae do Jackson",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 2,
+      "nome": "Michael Scofield222",
+      "unidade": {
+        "id": 2,
+        "descricao": "Unidade Prisional Sao Luis 2"
+      },
+      "nomeMae": "Mae do Miller",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 3,
+      "nome": "Dominic Purcell",
+      "unidade": {
+        "id": 3,
+        "descricao": "Unidade Prisional Sao Luis 3"
+      },
+      "nomeMae": "Mae do Purcell",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 4,
+      "nome": "Lincoln Burrows",
+      "unidade": {
+        "id": 4,
+        "descricao": "Unidade Prisional Sao Luis 4"
+      },
+      "nomeMae": "Mae do Burrows",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 5,
+      "nome": "Fernando Sucre",
+      "unidade": {
+        "id": 5,
+        "descricao": "Unidade Prisional Sao Luis 5"
+      },
+      "nomeMae": "Mae do Sucre",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 6,
+      "nome": "Sara Tancredi",
+      "unidade": {
+        "id": 6,
+        "descricao": "Unidade Prisional Sao Luis 6"
+      },
+      "nomeMae": "Mae da Tancredi",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 7,
+      "nome": "Veronica Donovan",
+      "unidade": {
+        "id": 7,
+        "descricao": "Unidade Prisional Sao Luis 7"
+      },
+      "nomeMae": "Mae da Tancredi",
+      "cpf": "000.000.000-12"
+    },
+    {
+      "id": 8,
+      "nome": "baianinho",
+      "unidade": {
+        "id": 2,
+        "descricao": "Unidade Prisional Sao Luis 5"
+      },
+      "cpf": "123123123",
+      "nomeMae": "asdasd"
+    },
+    {
+      "id": 9,
+      "nome": "fulaninho de tal",
+      "unidade": {
+        "id": 1,
+        "descricao": "Unidade Prisional Sao Luis 6"
+      },
+      "cpf": "555.171.1313-55",
+      "nomeMae": "filhinho da mamae"
+    }
+  ],
+  "atendimentos": [
+    {
+      "id": 1,
+      "tipoAtendimento": {
+        "id": 1,
+        "descricao": "Educação"
+      },
+      "detento": {
+        "id": 1,
+        "nome": "Samuel Jackson"
+      }
+    }
+  ],
+  "unidades": [
+    {
+      "id": 1,
+      "descricao": "Unidade Prisional Sao Luis 1"
+    },
+    {
+      "id": 2,
+      "descricao": "Unidade Prisional Sao Luis 2"
+    },
+    {
+      "id": 3,
+      "descricao": "Unidade Prisional Sao Luis 3"
+    },
+    {
+      "id": 4,
+      "descricao": "Unidade Prisional Sao Luis 4"
+    },
+    {
+      "id": 5,
+      "descricao": "Unidade Prisional Sao Luis 5"
+    },
+    {
+      "id": 6,
+      "descricao": "Unidade Prisional Sao Luis 6"
+    },
+    {
+      "id": 7,
+      "descricao": "Unidade Prisional Sao Luis 7"
+    }
+  ],
+  "tipoAtendimento": [
+    {
+      "id": 1,
+      "descricao": "Educação"
+    },
+    {
+      "id": 2,
+      "descricao": "Enfermagem"
+    },
+    {
+      "id": 3,
+      "descricao": "Psicologia"
+    },
+    {
+      "id": 4,
+      "descricao": "Segurança"
+    },
+    {
+      "id": 5,
+      "descricao": "Social"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+.CriarAtendButton {
+  display: flex;
+  width: 150px;
+  height: 32px;
+  line-height: 16px;
+  padding: 10px 5px;
+  background-color: #1b93fb;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.CriarAtendButton:hover {
+  background-color: rgba($color: #1b93fb, $alpha: 0.9);
+  color: rgba($color: #fff, $alpha: 0.9);
+
+}
