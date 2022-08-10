@@ -4,22 +4,18 @@ import Link from "next/link";
 import { useDetento } from "../../context/DetentosContext";
 
 interface ActionTable {
-  id?: number;
+  id: number;
   hrefEdit: string;
   hrefDelete?: string;
-  whoDelete: string;
 }
 
-export default function ActionTable({ hrefEdit, hrefDelete, id, whoDelete}: ActionTable) {
+export default function ActionTableAtendimento({ hrefEdit, hrefDelete, id}: ActionTable) {
   const {deleteDetentos, deleteAtendimentos} = useDetento();
 
   const handleDelete = async () => {
     try {
-      if (whoDelete == "detentos") {
-        await deleteDetentos(id);
-      } else {
         await deleteAtendimentos(id); 
-      }
+
     } catch (error) {
      console.log(error); 
     } finally {

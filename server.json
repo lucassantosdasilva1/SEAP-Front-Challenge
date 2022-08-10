@@ -11,16 +11,6 @@
       "cpf": "000.000.000-12"
     },
     {
-      "id": 2,
-      "nome": "Michael Scofield222",
-      "unidade": {
-        "id": 2,
-        "descricao": "Unidade Prisional Sao Luis 2"
-      },
-      "nomeMae": "Mae do Miller",
-      "cpf": "000.000.000-12"
-    },
-    {
       "id": 3,
       "nome": "Dominic Purcell",
       "unidade": {
@@ -79,16 +69,6 @@
       },
       "cpf": "123123123",
       "nomeMae": "asdasd"
-    },
-    {
-      "id": 9,
-      "nome": "fulaninho de tal",
-      "unidade": {
-        "id": 1,
-        "descricao": "Unidade Prisional Sao Luis 6"
-      },
-      "cpf": "555.171.1313-55",
-      "nomeMae": "filhinho da mamae"
     }
   ],
   "atendimentos": [
@@ -96,10 +76,21 @@
       "id": 1,
       "tipoAtendimento": {
         "id": 1,
-        "descricao": "Educação"
+        "descricao": "Enfermagem"
       },
       "detento": {
         "id": 1,
+        "nome": "Samuel Jackson"
+      }
+    },
+    {
+      "id": 2,
+      "tipoAtendimento": {
+        "id": 2,
+        "descricao": "Enfermagem"
+      },
+      "detento": {
+        "id": 2,
         "nome": "Samuel Jackson"
       }
     }

@@ -9,6 +9,7 @@ import api from "../service/api";
 
 import { UnidadesDTO } from "../DTO/UnidadesDTO";
 import { atendimentosDTO } from "../DTO/AtendimentosDTO";
+import { tipoAtendimentoDTO } from "../DTO/TipoAtendimentoDTO";
 
 interface DetentosContextProps {
   children: JSX.Element;
@@ -33,6 +34,10 @@ interface IDataContext {
   unidades: UnidadesDTO[];
   setUnidades: React.Dispatch<React.SetStateAction<UnidadesDTO[]>>;
   getUnidades: () => Promise<{ data: UnidadesDTO[] }>;
+  // TipoAtendimento
+  tipoAtendimento: tipoAtendimentoDTO[];
+  setTipoAtendimento: React.Dispatch<React.SetStateAction<tipoAtendimentoDTO[]>>;
+  getTipoAtendimento: () => Promise<{ data: tipoAtendimentoDTO[] }>;
   // Atendimento
   atendimentos: atendimentosDTO[];
   datasourceAtend: EditAtendimentoDataType[];
@@ -60,12 +65,21 @@ const DetentosContext = createContext({} as IDataContext);
 export default function detentosProvider({ children }: DetentosContextProps) {
   const [detentos, setDetentos] = useState<detentosDTO[]>([]);
   const [datasource, setDatasouce] = useState<EditDetentoDataType[]>([]);
+
   const [unidades, setUnidades] = useState<UnidadesDTO[]>([]);
+  const [tipoAtendimento, setTipoAtendimento] = useState<UnidadesDTO[]>([]);
 
   // ===== getUnidades =====
   async function getUnidades() {
     try {
       return await api.get("/unidades/");
+    } catch (error) {}
+  }
+
+  // ===== tipoAtendimentos ====
+  async function getTipoAtendimento() {
+    try {
+      return await api.get("/tipoAtendimento/");
     } catch (error) {}
   }
 
@@ -254,6 +268,9 @@ export default function detentosProvider({ children }: DetentosContextProps) {
         unidades,
         getUnidades,
         setUnidades,
+        tipoAtendimento,
+        setTipoAtendimento,
+        getTipoAtendimento,
         detentos,
         datasource,
         getDetentos,
@@ -269,7 +286,7 @@ export default function detentosProvider({ children }: DetentosContextProps) {
         getAtendimentos,
         editAtendimentos,
         postAtendimentos,
-        deleteAtendimentos,
+        deleteAtendimentos
       }}
     >
       {children}

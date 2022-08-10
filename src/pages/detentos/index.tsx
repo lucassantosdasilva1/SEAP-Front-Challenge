@@ -53,7 +53,7 @@ export default function Detentos() {
       dataIndex: "acao",
       key: "acao",
       render: (_: any, record: EditDetentoDataType) => (
-        <ActionTable hrefEdit="/detentos/editarDetento" id={record.id} />
+        <ActionTable hrefEdit="/detentos/editarDetento" id={record.id} whoDelete="detentos"/>
       ),
     },
   ];

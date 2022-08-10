@@ -37,23 +37,19 @@ interface ItemProps {
 
 export default function EditarAtendimento({ atendimento }: Props) {
   const [atendimentoState, setAtendimentoState] = useState(atendimento);
-  const [nomeDetento, setNomeDetento] = useState(
-    atendimento.detento
-  );
+  const [nomeDetento, setNomeDetento] = useState(atendimento.detento.nome);
 
-  const [tipoAtendimento, setTipoAtendimento] = useState(
-    atendimento.tipoAtendimento
-  );
+  const [tipoAtendimentoDrop, setTipoAtendimentoDrop] = useState(atendimento.tipoAtendimento.descricao);
 
   // const [idDaUnidade, setIdDaUnidade] = useState(detento.unidade.id);
 
-  const { editDetentos, getUnidades, unidades, setUnidades, detentos,getDetentos, setDetentos } = useDetento();
+  const { tipoAtendimento,setTipoAtendimento, getTipoAtendimento, detentos, getDetentos, setDetentos, editAtendimentos } = useDetento();
 
   //popular o dropdown
   const options: ItemProps[] = [];
-  for (let i = 0; i < unidades.length; i++) {
-    const label = unidades[i].descricao;
-    const value = unidades[i].descricao;
+  for (let i = 0; i < tipoAtendimento.length; i++) {
+    const label = tipoAtendimento[i].descricao;
+    const value = tipoAtendimento[i].descricao;
     options.push({
       label: label,
       value: value,
@@ -61,31 +57,30 @@ export default function EditarAtendimento({ atendimento }: Props) {
   }
 
   //faz o get e setaunidades ao array "unidades"
-  const getUnidad = async () => {
-    const { data } = await getUnidades();
-    setUnidades(data);
+  const getAtendiment = async () => {
+    const { data } = await getTipoAtendimento();
+    setTipoAtendimento(data);
   };
+
   const getDetent = async () => {
     const {data} = await getDetentos();
     setDetentos(data);
   }
   async function handlePut() {
-    // const value: detentosDTO = {
-    //   id: detento.id,
-    //   nome: detentoState.nome,
-    //   unidade: {
-    //     id:
-    //       detentoState.unidade.id != idDaUnidade
-    //         ? idDaUnidade
-    //         : detentoState.unidade.id,
-    //     descricao: unidadeDescription,
-    //   },
-    //   cpf: detentoState.cpf,
-    //   nomeMae: detentoState.nomeMae,
-    // };
+    const value: atendimentosDTO = {
+      id: atendimento.id,
+      detento:{
+        id: atendimento.id,
+        nome: atendimento.detento.nome != nomeDetento? nomeDetento : atendimento.detento.nome,
+      },
+      tipoAtendimento: {
+        id: atendimento.id,
+        descricao: atendimento.tipoAtendimento.descricao != tipoAtendimentoDrop ? tipoAtendimentoDrop : atendimento.tipoAtendimento.descricao
+      } 
+    };
 
     try {
-      // await editDetentos({ ...detento, ...value });
+      await editAtendimentos({ ...atendimento, ...value });
     } catch (error) {
       console.log(error);
     }
@@ -99,13 +94,13 @@ export default function EditarAtendimento({ atendimento }: Props) {
     //   setIdDaUnidade(unidade[0].id);
     // }
 
-    getUnidad();
+    getAtendiment();
     getDetent();
   }, []);
 
   return (
     <Layout>
-      <PageHeader title="Editar Detento" />
+      <PageHeader title="Editar Atendimento" />
       <Content style={{ marginRight: "10rem", marginLeft: "10rem" }}>
         <div
           style={{
@@ -153,14 +148,14 @@ export default function EditarAtendimento({ atendimento }: Props) {
                 style={{ marginBottom: "0.5rem" }}
               >
                 <Col span={24}>
-                  <Typography>Unidade</Typography>
+                  <Typography>Tipo de Atendimento</Typography>
                 </Col>
                 <Select
                   // defaultValue={detento.unidade.descricao}
                   placeholder="Selecione o Tipo de Atendimento"
                   style={{ borderRadius: "5px", width: "100%" }}
-                  value={tipoAtendimento}
-                  onChange={(value) => setTipoAtendimento(value)}
+                  value={tipoAtendimentoDrop}
+                  onChange={(value) => setTipoAtendimentoDrop(value)}
                   options={options}
                 ></Select>
               </Row>
@@ -176,7 +171,7 @@ export default function EditarAtendimento({ atendimento }: Props) {
               marginTop: "5%",
             }}
           >
-            <Link href={`/detentos`}>
+            <Link href={`/atendimentos`}>
               <a style={{ color: "gray" }}>
                 <Button
                   type="primary"
@@ -201,8 +196,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   const { edit } = params;
 
   const response = await api.get(`/atendimentos/${edit}`);
-  const atendimento: atendimentosDTO = response.data;
-  // setDetentos(ListaDetentos)
+  const atendimento: atendimentosDTO = response.data
 
   return {
     props: {

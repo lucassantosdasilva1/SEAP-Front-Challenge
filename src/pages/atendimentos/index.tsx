@@ -18,6 +18,7 @@ import { Input } from "antd";
 const { Search } = Input;
 
 import styles from "./atendimentos.module.scss";
+import ActionTableAtendimento from "../../components/ActionsTable/ActionTableAtendimentos";
 
 interface DataType {
   id: number;
@@ -50,7 +51,7 @@ export default function Atendimentos() {
       title: "Ação",
       dataIndex: "acao",
       key: "acao",
-      render: (_: any, record: EditAtendimentoDataType) => <ActionTable hrefEdit="/atendimentos/editarAtendimento" id={record.id}/>
+      render: (_: any, record: EditAtendimentoDataType) => <ActionTableAtendimento hrefEdit="/atendimentos/editarAtendimento" id={record.id}/>
     },
   ];
 

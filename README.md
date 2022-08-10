@@ -27,7 +27,7 @@ Projeto desenvolvido durante a avaliação para o teste de Desenvolvedor Front-e
 ---
 
 ## ⚙️ Funcionalidades
-
+ 
 - Detento
   - [x] Listar
   - [x] Criar
@@ -39,10 +39,10 @@ Projeto desenvolvido durante a avaliação para o teste de Desenvolvedor Front-e
 
 - Atendimento
   - [x] Listar
-  - [x] Criar
-  - [x] Editar
-  - [x] Apagar
   - [x] Pesquisar
+  - [x] Editar
+  - [] Criar :/ nao deu tempo ultimo commit as 3:30 da madruga
+  - [] Apagar :/ nao deu tempo ultimo commit as 3:30 da madruga
 
 </br>
 

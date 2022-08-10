@@ -1,4 +1,4 @@
-import { TeamOutlined, MailOutlined } from "@ant-design/icons";
+import { TeamOutlined, MailOutlined, LaptopOutlined } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export default function SideMenu() {
         </Link>
       ),
       key: "atendimentos",
-      icon: <TeamOutlined />,
+      icon: <LaptopOutlined />,
     }
      //,
     // {
